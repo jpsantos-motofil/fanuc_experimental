@@ -597,7 +597,7 @@ bool IKFastKinematicsPlugin::getPositionFK(const std::vector<std::string> &link_
   bool valid = true;
 
   IkReal eerot[9],eetrans[3];
-  IkReal angles[joint_angles.size()];
+  IkReal* angles = new IkReal[joint_angles.size()];
   for (unsigned char i=0; i < joint_angles.size(); i++)
     angles[i] = joint_angles[i];
 
